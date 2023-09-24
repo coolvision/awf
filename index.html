@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+  
+    <div class="card" style="padding:1em;">
+
+        <form>
+            <label for="password">openAI API Key:</label>
+            <input type="password" id="api-key" required />
+            <br><br>
+            <label for="gpt">model:</label>
+            <select name="model" id="model">
+                <option value="gpt-4">gpt-4</option>
+                <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+            </select>
+
+        </form>
+
+        <br>
+        <label for="prompt">prompt:</label>
+        <textarea rows="12" cols="80" name="prompt" id="prompt">You are a smart web filter, a distraction blocker with goal of improving user's productivity.
+Following types of pages are distracting and should be blocked:
+entertainment, shopping, online stores, social networking, news, magazines, lists of links, blogs without technical/educational content.
+Following types of pages are useful for work and should not be blocked:
+software development, technical information, general reference, manuals, answers to technical questions
+Should a web page with following content be blocked? Answer only YES or NO, followed with a newline and a brief explanation.
+===</textarea>
+
+        <br>
+        <br>
+        <div style="clear:both">
+          <div style="float:left">
+                <label for="whitelist">whitelist:</label>
+                <br>
+                <textarea rows="4" name="whitelist" id="whitelist">github.com</textarea>
+          </div>
+          <div style="float:left; margin-left:8px;">
+                <label for="blacklist">blacklist:</label>
+                <br>
+                <textarea rows="4" name="blacklist" id="blacklist">twitter.com</textarea>
+          </div>
+        </div>
+
+        <br style="clear:both">
+
+        <br>
+        <button type="submit" id="save">Save settings</button>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <button id="clear">Clear cache</button>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

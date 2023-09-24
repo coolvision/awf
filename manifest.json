@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "AI web filter",
+    "version": "0.1",
+    "action": 
+    { 
+        "default_popup": "index.html",
+        "default_icon": "icon_white.png"
+    },
+    "content_scripts": [
+        {
+          "js": ["content.js"],
+          "matches": [
+            "http://*/*",
+            "https://*/*"
+          ],
+          "run_at": "document_start"
+        }
+    ],
+
+    "permissions": [
+        "storage"
+    ]
+}
